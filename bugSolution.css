@@ -1,0 +1,39 @@
+To correct this, you need to increase the specificity of the `div p` selector.  Several ways to do this include:
+
+1. **Adding an extra class:**
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green;
+}
+
+div .special-paragraph {
+  color: green; /* added class selector for specificity */
+}
+```
+
+2. **Using more specific selectors (if applicable):**
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div > p {
+  color: green; /* Using the child combinator increases specificity */
+}
+```
+
+By increasing specificity, you ensure the style applied to `div p` is prioritized over the style applied to `div`, resulting in the expected green text color.
