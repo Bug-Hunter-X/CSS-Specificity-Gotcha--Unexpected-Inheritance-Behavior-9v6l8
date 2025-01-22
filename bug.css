@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates a common yet subtle error related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green;
+}
+```
+
+In this example, the `<p>` element within a `<div>` element will unexpectedly have a blue color, not green.  This is because the specificity of `div p` is lower than that of `div`. While `div p` directly styles the nested `<p>`, the `div` selector's specificity is higher since it applies to *all* elements within the div, including the `p` tag. In such cases, the style from the parent element (`div`) overrides the more specific selector (`div p`).
